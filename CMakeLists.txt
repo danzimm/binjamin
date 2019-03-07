@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 find_package(LLVM CONFIG REQUIRED)
 
-add_library(objectFile STATIC lib/ObjectFile.cpp)
+add_library(objectFile SHARED lib/ObjectFile.cpp)
 target_include_directories(objectFile PUBLIC include)
 target_include_directories(objectFile SYSTEM PRIVATE ${LLVM_INCLUDE_DIRS})
 target_compile_features(objectFile PRIVATE cxx_std_14)
